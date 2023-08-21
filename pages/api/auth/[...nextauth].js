@@ -27,21 +27,19 @@ async function refreshAccessToken(token) {
 }
 
 export default NextAuth({
-  // Configure one or more authentication providers
   providers: [
     SpotityProvider({
       clientId: process.env.NEXT_PUBLIC_CLIENT_ID,
       clientSecret: process.env.NEXT_PUBLIC_CLIENT_SECRET,
       authorization: LOGIN_URL,
     }),
-    // ...add more providers here
   ],
   secret: process.env.JWT_SECRET,
   pages: {
     signIn: "/login",
   },
   callbacks: {
-    async jwt(token, account, user) {
+    async jwt({ token, account, user }) {
       if (account && user) {
         return {
           ...token,
@@ -61,7 +59,7 @@ export default NextAuth({
       return await refreshAccessToken(token);
     },
 
-    async session(session, token) {
+    async session({ session, token }) {
       session.user.accessToken = token.accessToken;
       session.user.refreshToken = token.refreshToken;
       session.user.username = token.username;

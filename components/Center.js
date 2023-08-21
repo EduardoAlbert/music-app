@@ -21,6 +21,8 @@ function Center() {
     setColor(shuffle(colors).pop());
   }, []);
 
+  console.log(session)
+
   return (
     <div className="flex-grow">
       <header className="absolute top-5 right-8">
@@ -31,11 +33,10 @@ function Center() {
         >
           <img
             className="rounded-full w-10 h-10"
-            /* src={session.user?.image} */
-            src="https://avatars.githubusercontent.com/u/31825085?s=48&v=4"
+            src={session?.user.image}
           />
-          {/* <h2>{session?.user.name}</h2> */}
-          <h2>Eduardo Albert</h2>
+          <h2>{session?.user.name}</h2>
+          {/* <h2>Eduardo Albert</h2> */}
           <ChevronDownIcon className="h-5 w-5" />
         </div>
       </header>
