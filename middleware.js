@@ -7,7 +7,7 @@ export async function middleware(req) {
 
   const { pathname } = req.nextUrl;
 
-  if (pathname.includes("/api/auth") || token) {
+  if (pathname.startsWith("/api/auth") || token) {
     return NextResponse.next();
   }
 
@@ -16,3 +16,7 @@ export async function middleware(req) {
     return NextResponse.redirect(url);
   }
 }
+
+export const config = {
+  matcher: "/",
+};
