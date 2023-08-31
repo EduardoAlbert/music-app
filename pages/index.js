@@ -11,7 +11,7 @@ export default function Home() {
         <Center />
       </main>
 
-      <div className="sticky bottom-0">
+      <div className="flex justify-center sticky bottom-5">
         <Player />
       </div>
     </div>
