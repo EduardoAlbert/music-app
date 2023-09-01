@@ -78,8 +78,8 @@ function Sidebar() {
                 onClick={() => setPlaylistId(playlist.id)}
               >
                 <img className="w-14" src={playlist?.images[0]?.url} alt="" />
-                <div>
-                  <p key={playlist.id} className="text-white">
+                <div className="truncate">
+                  <p key={playlist.id} className="text-white truncate">
                     {playlist.name}
                   </p>
                   <p className="text-sm">Playlist</p>
