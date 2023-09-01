@@ -85,9 +85,11 @@ function Player() {
           src={songInfo?.album.images?.[0]?.url}
           alt=""
         />
-        <div className="text-xs lg:text-lg font-[600]">
-          <h3>{songInfo?.name}</h3>
-          <p className="text-sm text-[#bbb]">{songInfo?.artists?.[0]?.name}</p>
+        <div className="text-xs lg:text-lg font-[600] w-3/4">
+          <h3 className="truncate" title={songInfo?.name}>
+            {songInfo?.name}
+          </h3>
+          <p className="text-sm text-[#bbb] truncate">{songInfo?.artists?.[0]?.name}</p>
         </div>
       </div>
 
