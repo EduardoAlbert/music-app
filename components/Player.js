@@ -28,6 +28,46 @@ function Player() {
 
   const songInfo = useSongInfo();
 
+  const skipToNext = () => {
+    debouncedSkipToNext();
+  };
+
+  const skipToPrevious = () => {
+    debouncedSkipToPrevious();
+  };
+
+  const debouncedSkipToNext = useCallback(
+    debounce(() => {
+      spotifyApi.skipToNext().then(() => {
+        debouncedGetCurrentSong();
+      });
+    }, 350),
+    []
+  );
+
+  const debouncedSkipToPrevious = useCallback(
+    debounce(() => {
+      spotifyApi.skipToPrevious().then(() => {
+        debouncedGetCurrentSong();
+      });
+    }, 350),
+    []
+  );
+
+  const debouncedGetCurrentSong = useCallback(
+    debounce(() => {
+      spotifyApi.getMyCurrentPlayingTrack().then((data) => {
+        console.log("Now playing: ", data.body?.item);
+        setCurrentTrackId(data.body?.item?.id);
+
+        spotifyApi.getMyCurrentPlaybackState().then((data) => {
+          setIsPlaying(data.body?.is_playing);
+        });
+      });
+    }, 300),
+    []
+  );
+
   const fetchCurrentSong = () => {
     if (!songInfo) {
       spotifyApi.getMyCurrentPlayingTrack().then((data) => {
@@ -89,7 +129,9 @@ function Player() {
           <h3 className="truncate" title={songInfo?.name}>
             {songInfo?.name}
           </h3>
-          <p className="text-sm text-[#bbb] truncate">{songInfo?.artists?.[0]?.name}</p>
+          <p className="text-sm text-[#bbb] truncate">
+            {songInfo?.artists?.[0]?.name}
+          </p>
         </div>
       </div>
 
@@ -97,10 +139,7 @@ function Player() {
       <div className="flex items-center justify-evenly z-10">
         <ShuffleOutlinedIcon className="button" />
 
-        <SkipPreviousIcon
-          onClick={() => spotifyApi.skipToPrevious()}
-          className="button w-8 h-8"
-        />
+        <SkipPreviousIcon onClick={skipToPrevious} className="button w-8 h-8" />
 
         {isPlaying ? (
           <PauseCircleIcon
@@ -114,10 +153,7 @@ function Player() {
           />
         )}
 
-        <SkipNextIcon
-          onClick={() => spotifyApi.skipToNext()}
-          className="button w-8 h-8"
-        />
+        <SkipNextIcon onClick={skipToNext} className="button w-8 h-8" />
 
         <LoopIcon className="button" />
       </div>
