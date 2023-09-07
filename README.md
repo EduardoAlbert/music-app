@@ -1,38 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Spotifty Music App 🎵</h1>
 
-## Getting Started
+![License](https://img.shields.io/github/license/EduardoAlbert/spotify-music-app)
+![Forks](https://img.shields.io/github/forks/EduardoAlbert/spotify-music-app)
+![Stars](https://img.shields.io/github/stars/EduardoAlbert/spotify-music-app)
+![Issues](https://img.shields.io/github/issues/EduardoAlbert/spotify-music-app)
 
-First, run the development server:
+This is a web application project built with Next.js that utilizes the Spotify API to allow users to access their music and listen to their favorite playlists directly within the platform.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Watch a demo video [here](https://www.youtube.com/). (In progress)
+
+### Key Challenges and Features
+
+-   [x] **Integration with the Spotify API**: The application is capable of fetching Spotify playlists and controlling music playback using the official Spotify API.
+
+-   [x] **User Authentication with Spotify and NextAuth**: I've implemented user authentication that enables users to log in using their Spotify accounts. This also includes the use of access and refresh JWT tokens to securely keep users logged in.
+
+-   [x] **Stunning Responsive UI with Tailwind CSS**: The application boasts a beautiful and responsive user interface, thanks to the use of the Tailwind CSS framework.
+
+-   [x] **Utilizing Next.js 12 Middleware for Authenticated User Access Control**: I've learned how to use Next.js 12 Middleware capabilities to protect routes and ensure that only authenticated users have access to the resources.
+
+-   [x] **State Management with Recoil**: To handle playlist and song switching effectively, I use the Recoil library for state management.
+
+-   [x] **Debounce for Handling Intensive Requests**: I've implemented the debounce technique to manage intensive requests, such as adjusting volume through the Spotify API.
+
+## How to run
+
+To get started with the Spotify Music App, follow these steps:
+
+1. **Install Dependencies**: Run the following command to install all the necessary dependencies:
+
+```shell
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Start the Development Server**: After installing the dependencies, start the development server with the following command:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```shell
+npm run dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This will start the application locally, and you can access it at http://localhost:3000.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Additional Configuration
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To make the application work correctly, you need to set up Spotify and NextAuth credentials. Ensure you create an application in the Spotify Developer Dashboard and configure the appropriate environment variables in the `.env` file.
 
-## Learn More
+Please note that an active Spotify device is required for full functionality.
 
-To learn more about Next.js, take a look at the following resources:
+## Contribution
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I would be delighted to receive your contributions to enhance the Spotify Music App. Feel free to open issues or submit pull requests with improvements.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Acknowledgments
 
-## Deploy on Vercel
+-   [React](https://reactjs.org/)
+-   [Next.js](https://nextjs.org/)
+-   [NextAuth](https://next-auth.js.org/)
+-   [Spotify API](https://developer.spotify.com/documentation/web-api/)
+-   [Tailwind CSS](https://tailwindcss.com/)
+-   [Recoil](https://recoiljs.org/)
+-   [Debounce](https://www.npmjs.com/package/debounce)
+-   [Mui](https://mui.com/)
+-   [Heroicons](https://heroicons.com/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## License
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
