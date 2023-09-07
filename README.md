@@ -43,9 +43,9 @@ This will start the application locally, and you can access it at http://localho
 
 ### Additional Configuration
 
-To make the application work correctly, you need to set up Spotify and NextAuth credentials. Ensure you create an application in the Spotify Developer Dashboard and configure the appropriate environment variables in the `.env` file.
+To make the application work correctly, you need to set up Spotify and [NextAuth](https://next-auth.js.org/configuration/options) credentials. Ensure you create an application in the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard) and configure the appropriate environment variables in the `.env` file.
 
-Please note that an active Spotify device is required for full functionality.
+Please note that an active [Spotify device](https://www.spotify.com/) is required for full functionality.
 
 ## Contribution
 
@@ -53,6 +53,7 @@ I would be delighted to receive your contributions to enhance the Spotify Music 
 
 ## Acknowledgments
 
+-   [Sonny Sangha](https://github.com/sonnysangha)
 -   [React](https://reactjs.org/)
 -   [Next.js](https://nextjs.org/)
 -   [NextAuth](https://next-auth.js.org/)
