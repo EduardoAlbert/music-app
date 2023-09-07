@@ -17,6 +17,7 @@ import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
+import { Skeleton } from "@mui/material";
 
 const colors = [
   "from-indigo-500",
@@ -167,15 +168,33 @@ function Center() {
         className={`flex items-end space-x-7 bg-gradient-to-b 
         to-black ${color} h-80 text-white p-8`}
       >
-        <img
-          className="h-44 w-44 shadow-2xl"
-          src={playlist?.images[0]?.url}
-          alt=""
-        />
+        {playlist?.images ? (
+          <img
+            className="h-44 w-44 shadow-2xl"
+            src={playlist?.images[0]?.url}
+            alt=""
+          />
+        ) : (
+          <Skeleton
+            variant="rectangular"
+            width={"11rem"}
+            height={"11rem"}
+            animation="pulse"
+            sx={{ bgcolor: "#2e2e2e" }}
+          />
+        )}
+
         <div>
           <p>PLAYLIST</p>
           <h1 className="text-2xl md:text-3xl xl:text-5xl font-bold">
-            {playlist?.name}
+            {playlist?.name ? (
+              playlist?.name
+            ) : (
+                <Skeleton
+                  animation="pulse"
+                  sx={{ bgcolor: "#2e2e2e" }}
+                />
+            )}
           </h1>
         </div>
       </section>

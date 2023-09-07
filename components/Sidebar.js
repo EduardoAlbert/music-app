@@ -9,7 +9,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AutoAwesomeMotionOutlinedIcon from "@mui/icons-material/AutoAwesomeMotionOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-import { IconButton } from "@mui/material";
+import { IconButton, Skeleton } from "@mui/material";
 
 import { HeartIcon, RssIcon } from "@heroicons/react/outline";
 
@@ -70,22 +70,59 @@ function Sidebar() {
           <hr className="border-t-[0.1px] border-[#2e2e2e]" />
 
           <div className="overflow-y-scroll scrollbar-hide max-h-[70%] pb-[100%]">
-            {playlists.map((playlist) => (
-              <div
-                className={`flex items-center space-x-3 hover:bg-[#2e2e2e] ${
-                  playlist.id == playlistId ? "bg-[#2e2e2e]" : ""
-                } hover:text-white p-2 cursor-pointer rounded`}
-                onClick={() => setPlaylistId(playlist.id)}
-              >
-                <img className="w-14" src={playlist?.images[0]?.url} alt="" />
-                <div className="truncate">
-                  <p key={playlist.id} className="text-white truncate">
-                    {playlist.name}
-                  </p>
-                  <p className="text-sm">Playlist</p>
-                </div>
+            {playlists[0] ? (
+              <>
+                {playlists.map((playlist) => (
+                  <div
+                    className={`flex items-center space-x-3 hover:bg-[#2e2e2e] ${
+                      playlist.id == playlistId ? "bg-[#2e2e2e]" : ""
+                    } hover:text-white p-2 cursor-pointer rounded`}
+                    onClick={() => setPlaylistId(playlist.id)}
+                  >
+                    <img
+                      className="w-14"
+                      src={playlist?.images[0]?.url}
+                      alt=""
+                    />
+                    <div className="truncate">
+                      <p key={playlist.id} className="text-white truncate">
+                        {playlist.name}
+                      </p>
+                      <p className="text-sm">Playlist</p>
+                    </div>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div className="space-y-1">
+                {[...Array(10)].map((_, i) => (
+                  <div
+                    className={`flex items-center space-x-3 bg-[#2e2e2e] cursor-pointer p-2 rounded`}
+                  >
+                    <Skeleton
+                      variant="rectangular"
+                      width={56}
+                      height={56}
+                      animation="pulse"
+                    />
+                    <div className="space-y-2">
+                      <Skeleton
+                        variant="rectangular"
+                        width={75}
+                        height={"1.25rem"}
+                        animation="pulse"
+                      />
+                      <Skeleton
+                        variant="rectangular"
+                        width={50}
+                        height={"1.25rem"}
+                        animation="pulse"
+                      />
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         </div>
       </div>
