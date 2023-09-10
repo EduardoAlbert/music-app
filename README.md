@@ -5,11 +5,13 @@
 ![Stars](https://img.shields.io/github/stars/EduardoAlbert/spotify-music-app)
 ![Issues](https://img.shields.io/github/issues/EduardoAlbert/spotify-music-app)
 
+[![Screenshot](public/screenshot.png)](https://www.youtube.com/watch?v=lt9_I5YhPO4)
+
 This is a web application project built with Next.js that utilizes the Spotify API to allow users to access their music and listen to their favorite playlists directly within the platform.
 
-Watch a demo video [here](https://www.youtube.com/). (In progress)
+Watch a demo video [here](https://www.youtube.com/watch?v=lt9_I5YhPO4).
 
-[![Screenshot](public/screenshot.png)](https://www.youtube.com/)
+
 
 ### Key Challenges and Features
 
