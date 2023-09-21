@@ -1,8 +1,8 @@
 <h1 align="center">Music App 🎵</h1>
 
 ![License](https://img.shields.io/github/license/EduardoAlbert/spotify-music-app)
-![Forks](https://img.shields.io/github/forks/EduardoAlbert/spotify-music-app)
 ![Stars](https://img.shields.io/github/stars/EduardoAlbert/spotify-music-app)
+![Forks](https://img.shields.io/github/forks/EduardoAlbert/spotify-music-app)
 ![Issues](https://img.shields.io/github/issues/EduardoAlbert/spotify-music-app)
 
 [![Screenshot](public/screenshot.png)](https://www.youtube.com/watch?v=lt9_I5YhPO4)
