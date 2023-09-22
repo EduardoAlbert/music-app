@@ -11,8 +11,6 @@ This is a web application project built with Next.js that utilizes the Spotify A
 
 Watch a demo video [here](https://www.youtube.com/watch?v=lt9_I5YhPO4).
 
-
-
 ### Key Challenges and Features
 
 -   [x] **Integration with the Spotify API**: The application is capable of fetching Spotify playlists and controlling music playback using the official Spotify API.
